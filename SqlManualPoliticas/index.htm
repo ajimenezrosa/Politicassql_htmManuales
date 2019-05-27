@@ -1,0 +1,484 @@
+
+
+
+<nav id="navbar">
+  <header>Politicas de Bases de Datos</header>
+  <link rel="stylesheet" href="css/css.css">
+  <ul> 
+    <a class="nav-link" href="#Politicas" rel="internal"><li>Politicas de Bases de datos</li></a>
+    <a class="nav-link" href="#Objetivos" rel="internal"><li>Objetivos Generales</li></a>
+    <a class="nav-link" href="#alcance" rel="internal"><li>alcance.</li></a>
+    <a class="nav-link" href="#descripcion" rel="internal"><li>descripcion de Politicas</li></a>
+    <a class="nav-link" href="#Mantenimiento" rel="internal"><li>Mantenimiento de Bases de Datos</li></a>
+    <a class="nav-link" href="#Eliminacion" rel="internal"><li>Eliminacion de Archivos</li></a>
+    <a class="nav-link" href="#indices_Faltantes" rel="internal"><li>Verificacion de indices Faltantes</li></a>
+    <a class="nav-link" href="#indices_no_Utilizados" rel="internal"><li>Verificacion de indices no Utilizados</li></a>
+    <a class="nav-link" href="#Deteccion_de_Fragmentacion" rel="internal"><li>Deteccion de Fragmentacion en las Bases de Datos</li></a>
+    <a class="nav-link" href="#Estructuras_Organizacional" rel="internal"><li>Estructuras Organizacional de Base de Datos:</li></a>
+    <a class="nav-link" href="#Schemas" rel="internal"><li>Implementación de Schemas</li></a>
+    <a class="nav-link" href="#Tablas" rel="internal"><li>Creación de Tablas</li></a>
+    <a class="nav-link" href="#Campos" rel="internal"><li>Creación de Campos</li></a>
+    <a class="nav-link" href="#Procedimientos" rel="internal"><li>Creación de Procedimientos</li></a>
+
+    <a class="nav-link" href="#Vistas" rel="internal"><li>Vistas:</li></a>
+    <a class="nav-link" href="#Pases_a_Producción" rel="internal"><li>Pases a Producción:</li></a>
+    <a class="nav-link" href="#AuditoriaServidor" rel="internal"><li>Auditoria del Servidor</li></a>
+
+
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Politicas">
+    <header>Introduction</header>
+    <article>  
+      <p>      Establecer los lineamientos generales para el manejo efectivo de las bases de datos de la institución. Esto para determinas las normas tanto de acceso las políticas de recuperación en caso de desastres.  Así mismo los pasos que deberían darse en caso de aplicarse las mismas para las creaciones de esquemas y objetos en los servidores..</p>
+
+<p>Estas políticas son aplicables a todas las operaciones concernientes a los servidores de BASE DE DATOS existentes en el Instituto Nacional de Bienestar Magisterial. Aplicación que se extendería al área de desarrollo en todo lo relacionado a la creación de objetos en las bases de datos.   Los mismo deberán ser entregados de acuerdo a las políticas establecidas en este documento.</p>
+
+  <h1>Descripción de las Políticas</h1>
+
+    </section>
+  <section class="main-section" id="Objetivos">
+    <header>Mantenimientos de bases de datos</header>
+    <article>
+    <p>Los planes de mantenimiento en su generalidad deberán estar conformados por los tres (3) esquemas básicos de backup:</p>
+      
+        <ul>
+          <li>Backus Full</li>
+          <li>Backup Diferencial</li>
+          <li>Backup Diferencial</li>
+        </ul>
+
+<p>En nuestro caso se aplicarán un backup full de forma Semanal un backup transaccional ejecutado de forma diaria y un backup transaccional ejecutado en espacios de una hora (1 h) hasta dos horas (2 h) según sea necesario.</p>
+
+<p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+    </article>
+    </section>
+  <section class="main-section" id="alcance">
+    <header>ALCANCE:</header>
+    <article> 
+          <p>
+            Estas políticas son aplicables a todas las operaciones concernientes a los servidores de BASE DE DATOS existentes en el Instituto Nacional de Bienestar Magisterial. Aplicación que se extendería al área de desarrollo en todo lo relacionado a la creación de objetos en las bases de datos.   Los mismo deberán ser entregados de acuerdo a las políticas establecidas en este documento.
+            </p>
+    </article>
+    </section>
+  <section class="main-section" id="descripcion">
+    <header>Variables</header>
+
+        <h1>Descripción de las Políticas.</h1>
+   
+    </section>
+  <section class="main-section" id="Mantenimiento">
+    <header>Mantenimientos de bases de datos</header>
+    <article>
+      <p>
+        Los planes de mantenimiento en su generalidad deberán estar conformados por los tres (3) esquemas básicos de backup:
+      </p>
+      <ul>
+        <li> Backus Full</li> 
+		    <li> Backup Diferencial</li>
+		    <li> Backup Transaccional</li>
+
+      </ul>
+      <p>
+        En nuestro caso se aplicarán un backup full de forma Semanal un backup transaccional ejecutado de forma diaria y un backup transaccional ejecutado en espacios de una hora (1 h) hasta dos horas (2 h) según sea necesario.
+      </p>
+ 
+    </article>
+    </section>
+  <section class="main-section" id="Eliminacion">
+    <header>Eliminación de Archivos.</header>
+    <article>
+     <p> Los archivos serán Eliminados en un espacio no mayor de 4 semanas.</p>
+
+<p>A partir de este punto serán Eliminados, quedando solo aquellos archivos que son guardados por el personal de Infraestructura a nivel de cintas de backup.</p>
+
+
+
+    </article>
+    </section>
+  <section class="main-section" id="indices_Faltantes">
+    <header>Verificación de Índices Faltantes</header>
+    <article>
+<p>El optimizador de consultas de SQL Server registra al momento de optimizar una consulta los índices que a su criterio serían beneficiosos para esta consulta. La información resultante se almacena en tablas del sistema que pueden ser accedidas a traves de una DMV (Dynamic Management View). La siguiente consulta nos devuelve como resultado los índices sugeridos a nivel de todo el servidor:.</p>
+
+ 
+  <code>  -- Missing Indexes in current database by Index Advantage 
+      SELECT user_seeks * avg_total_user_cost * ( avg_user_impact * 0.01 ) 
+      AS [index_advantage] ,
+      migs.last_user_seek , 
+      mid.[statement] AS [Database.Schema.Table] ,
+      mid.equality_columns , 
+      mid.inequality_columns , 
+      mid.included_columns , migs.unique_compiles , 
+      migs.user_seeks , 
+      migs.avg_total_user_cost , 
+      migs.avg_user_impact
+      FROM sys.dm_db_missing_index_group_stats AS migs WITH ( NOLOCK ) 
+      INNER JOIN sys.dm_db_missing_index_groups AS mig WITH ( NOLOCK ) 
+      ON migs.group_handle = mig.index_group_handle 
+      INNER JOIN sys.dm_db_missing_index_details AS mid WITH ( NOLOCK ) 
+      ON mig.index_handle = mid.index_handle
+      WHERE mid.database_id = DB_ID()
+      ORDER BY index_advantage DESC ;
+      .
+    
+    </code>
+
+
+    </article>
+    </section>
+  <section class="main-section" id="indices_no_Utilizados">
+    <header>. Verificación de Índices no Utilizados</header>
+    <article>
+        <p>Me he basado en las siguientes consultas:</p>
+
+            <p>He utilizado las siguientes consultas añado las fuentes para que podáis obtener más información.
+            Esta primera indica aquellos indices que no se realizan consultas de lectura solo de escritura actualizaciones y inserciones, por lo que es una sobrecarga del sistema por lo que son candidatos a ser eliminados.</p>
+
+        
+<code>
+USE [tuBBDD] /* Replace with your Database Name */
+GO
+--TOTALLY UN-USED INDEXES
+SELECT DB_NAME(s.database_id) as [DB Name], OBJECT_NAME(s.[object_id]) AS [Table Name], i.name AS [Index Name], i.index_id,
+    i.is_disabled, i.is_hypothetical, i.has_filter, i.fill_factor, i.is_unique,
+    s.user_updates AS [Total Writes],
+    (s.user_seeks + s.user_scans + s.user_lookups) AS [Total Reads],
+    s.user_updates - (s.user_seeks + s.user_scans + s.user_lookups) AS [Difference],
+    (partstats.used_page_count / 128.0) AS [IndexSizeinMB]
+FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+INNER JOIN sys.indexes AS i WITH (NOLOCK)
+    ON s.[object_id] = i.[object_id]
+    AND s.index_id = i.index_id
+    AND s.database_id = DB_ID()
+INNER JOIN sys.dm_db_partition_stats AS partstats
+    ON i.object_id = partstats.object_id AND i.index_id = partstats.index_id
+WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+    AND user_updates > (user_seeks + user_scans + user_lookups)
+    AND (s.user_lookups=0 AND s.user_scans=0 AND s.user_seeks=0)
+    AND i.index_id > 1
+ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOMPILE);
+ .</code>>        
+
+  <p>
+      La siguiente consulta, muestra aquellos indices que tengan mas consultas de escritura que de lectura.
+      Debes estudiar cada indice si es candidato a ser eliminado.
+  </p>
+
+  <code> 
+      --INDEXES WITH WRITES > READS
+      SELECT DB_NAME(s.database_id) as [DB Name], OBJECT_NAME(s.[object_id]) AS [Table Name], i.name AS [Index Name], i.index_id,
+          i.is_disabled, i.is_hypothetical, i.has_filter, i.fill_factor, i.is_unique,
+          s.user_updates AS [Total Writes],
+          (s.user_seeks + s.user_scans + s.user_lookups) AS [Total Reads],
+          s.user_updates - (s.user_seeks + s.user_scans + s.user_lookups) AS [Difference],
+          (partstats.used_page_count / 128.0) AS [IndexSizeinMB]
+      FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+      INNER JOIN sys.indexes AS i WITH (NOLOCK)
+          ON s.[object_id] = i.[object_id]
+          AND s.index_id = i.index_id
+          AND s.database_id = DB_ID()
+      INNER JOIN sys.dm_db_partition_stats AS partstats
+          ON i.object_id = partstats.object_id AND i.index_id = partstats.index_id
+      WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+          AND (s.user_lookups<>0 OR s.user_scans<>0 OR s.user_seeks<>0)
+          AND s.user_updates > (s.user_seeks + s.user_scans + s.user_lookups)
+          AND i.index_id > 1
+      ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOMPILE);
+      GO
+  </code>  
+  <p>Fuente: thesqldude.com</p>
+
+  <p>
+      Esta consulta complementa la anterior para decir que indices podrías eliminar.
+      Se debe prestar atención User Scan, User Lookup y User Update antes de eliminar el Index.
+      Si el valor de User Scan, User Lookup y User Update es alto y de User Seek bajo necesitas revisar el Indice
+  </p>
+  <code> 
+      -- Unused Index Script
+      -- Original Author: Pinal Dave 
+      SELECT TOP 25
+      o.name AS ObjectName
+      , i.name AS IndexName
+      , i.index_id AS IndexID
+      , dm_ius.user_seeks AS UserSeek
+      , dm_ius.user_scans AS UserScans
+      , dm_ius.user_lookups AS UserLookups
+      , dm_ius.user_updates AS UserUpdates
+      , p.TableRows
+      , 'DROP INDEX ' + QUOTENAME(i.name)
+      + ' ON ' + QUOTENAME(s.name) + '.'
+      + QUOTENAME(OBJECT_NAME(dm_ius.OBJECT_ID)) AS 'drop statement'
+      FROM sys.dm_db_index_usage_stats dm_ius
+      INNER JOIN sys.indexes i ON i.index_id = dm_ius.index_id 
+      AND dm_ius.OBJECT_ID = i.OBJECT_ID
+      INNER JOIN sys.objects o ON dm_ius.OBJECT_ID = o.OBJECT_ID
+      INNER JOIN sys.schemas s ON o.schema_id = s.schema_id
+      INNER JOIN (SELECT SUM(p.rows) TableRows, p.index_id, p.OBJECT_ID
+      FROM sys.partitions p GROUP BY p.index_id, p.OBJECT_ID) p
+      ON p.index_id = dm_ius.index_id AND dm_ius.OBJECT_ID = p.OBJECT_ID
+      WHERE OBJECTPROPERTY(dm_ius.OBJECT_ID,'IsUserTable') = 1
+      AND dm_ius.database_id = DB_ID()
+      AND i.type_desc = 'nonclustered'
+      AND i.is_primary_key = 0
+      AND i.is_unique_constraint = 0
+      ORDER BY (dm_ius.user_seeks + dm_ius.user_scans + dm_ius.user_lookups) ASC
+  </code>  
+      <p>Fuente: blog.sqlauthority.com</p>
+
+    </article>
+    </section>
+  <section class="main-section" id="Deteccion_de_Fragmentacion">
+    <header>Detección de fragmentación en las bases de datos.</header>
+    <article>
+      <p>Rendimiento de las consultas SQL se puede disminuir si los índices están muy fragmentados en la instancia de base de datos de Microsoft SQL Server. 
+          Esto se puede presentar de la siguiente forma:
+          </p>
+            <ul>
+                <li>	Un índice específico</li>
+                <li>	Todos los índices de una tabla</li>
+                <li>	Todos los índices de una vista indizada</li>
+                <li>	Todos los índices de una base de datos</li>
+                <li>	Todos los índices de todas las bases de datos</li>
+            </ul>
+            <h1>
+                Consulta para determinar el porcentaje de fragmentación (En toda la base de datos)
+            </h1>
+            <<code>
+                WITH INDICES (BD, INDICETIPO, FRAGMENTACION, INDICE, TABLA)
+                AS (
+                SELECT DBS.NAME BASEDEDATOS, PS.INDEX_TYPE_DESC, PS.AVG_FRAGMENTATION_IN_PERCENT,
+                IND.NAME INDICE, TAB.NAME TABLA
+                FROM
+                SYS.DM_DB_INDEX_PHYSICAL_STATS (DB_ID(), NULL, NULL, NULL, NULL) PS
+                INNER JOIN SYS.DATABASES DBS
+                ON PS.DATABASE_ID = DBS.DATABASE_ID
+                INNER JOIN SYS.INDEXES IND
+                ON PS.OBJECT_ID = IND.OBJECT_ID
+                INNER JOIN SYS.TABLES TAB
+                ON TAB.OBJECT_ID = IND.OBJECT_ID
+                WHERE IND.NAME IS NOT NULL AND PS.INDEX_ID = IND.INDEX_ID
+                AND PS.AVG_FRAGMENTATION_IN_PERCENT > 0)
+                SELECT DISTINCT 
+                  CASE
+                 WHEN FRAGMENTACION > 5 AND FRAGMENTACION <= 30 THEN 'ALTER INDEX ' + INDICE + ' ON ' + TABLA + ' REORGANIZE'
+                  WHEN FRAGMENTACION > 30 THEN 'ALTER INDEX ' + INDICE + ' ON ' + TABLA + ' REBUILD'
+                 END QUERY, FRAGMENTACION, BD, INDICE, TABLA
+                FROM (SELECT FRAGMENTACION, INDICE, TABLA, BD FROM INDICES
+                  WHERE FRAGMENTACION > 5) A
+                ORDER BY FRAGMENTACION DESC
+              </code>  
+            
+
+    </article>
+    </section>
+  <section class="main-section" id="Estructuras_Organizacional">
+    <header>Estructuras Organizacional de Base de Datos:</header>
+    <article>
+
+    </article>
+    </section>
+  <section class="main-section" id="Schemas">
+    <header>Implementación de Schemas</header>
+    <article>
+        <p>Un concepto básico en la seguridad de SQL Server es que los propietarios de los objetos disponen de permisos irrevocables para administrarlos. No puede quitar privilegios de un propietario del objeto y no puede eliminar usuarios de una base de datos si en ella existen objetos que les pertenezcan.</p>
+        <h1>Separación usuario-esquema</h1>
+        <p>La separación del esquema de usuario permite disponer de más flexibilidad en la administración de los permisos de objeto de base de datos. Un esquema es un contenedor con nombre para los objetos de base de datos, que le permite agrupar objetos en espacios de nombres independientes. Por ejemplo, la base de datos de ejemplo de AdventureWorks contiene esquemas para Production, Sales y HumanResources.</p>
+
+        <p>La sintaxis de asignación de nombres de cuatro partes para hacer referencia a los objetos especifica el nombre de esquema</p>
+
+        <p style="background: lightgray"> 
+            Server.Database.DatabaseSchema.DatabaseObject 
+        </p>
+        <h1>Propietarios y permisos de esquemas</h1>
+        <p>
+            Los esquemas pueden pertenecer a cualquier entidad de seguridad de base de datos y una entidad de seguridad puede ser propietaria de varios esquemas. Puede aplicar reglas de seguridad a un esquema, que heredan todos los objetos incluidos en él. Después de configurar los permisos de acceso de un esquema, estos permisos se aplican automáticamente a medida que se agregan nuevos objetos al esquema. Se puede asignar un esquema predeterminado a los usuarios y varios usuarios de base de datos pueden compartir el mismo esquema.
+        </p>
+          <p>
+              De forma predeterminada, cuando los programadores crean objetos en un esquema, éstos pertenecen a la entidad de seguridad a la que pertenece el esquema y no al programador. La propiedad del objeto se puede transferir con la instrucción ALTER AUTHORIZATION de Transact-SQL. Un esquema también puede contener objetos que pertenecen a diferentes usuarios y disponer de más permisos granulares que los asignados al esquema, si bien esto no resulta recomendable ya que agrega complejidad a la administración de permisos. Los objetos se pueden mover entre los esquemas y la propiedad del esquema se puede transferir entre entidades de seguridad. Se pueden quitar usuarios de base de datos sin que esto afecte a los esquemas.
+          </p>
+            <h1>Esquemas integrados</h1>
+            <p>
+                SQL Server incluye diez esquemas predefinidos que usan el mismo nombre que los usuarios y los roles de base de datos integrados. Estos esquemas se han creado principalmente por compatibilidad con versiones anteriores. No puede quitar los esquemas con el mismo nombre que las funciones fijas de base de datos, aunque no los necesite. No puede colocar los siguientes esquemas:
+            </p>
+
+            <ul style="background: lightgray">
+                  <li>dbo</li>
+                  <li>guest</li>
+                  <li>sys</li>
+                  <li>INFORMATION_SCHEMA</li>
+
+            </ul>
+
+    </article>
+    </section>
+  <section class="main-section" id="Tablas">
+    <header>Creación de Tablas</header>
+    <article> 
+
+        <p>Para la creación de las tablas bajo ningún concepto debe hacerse referencia al sistema de la misma.  La referencia o nombre del sistema deberá estar asociado al Schema en el cual se encuentra dicha tabla</p>
+        <p>Las tablas deben ser creado con nombres específicos y claros que muestren referencia de que guarda dicha tabla.</p>
+      <li>The name of the function.</li>
+      <li>A list of arguments to the function, enclosed in parentheses and separated by commas.</li>
+      <li>The JavaScript statements that define the function, enclosed in curly brackets, { }.</li>
+      <p>For example, the following code defines a simple function named square:</P>
+
+   </article>
+    </section>
+    <section class="main-section" id="Campos">
+      <header>Creación de Campos</header>
+      <article>
+          <p>ara la creación de los campos deberá seguirse la siguiente regla.</p>
+          <p>De ser posible los campos deberán ser explícitos de forma tal que pueda ser identificado lo que se guarda en ellos de forma fácil y rápida.</p>
+
+          <h1>Ejemplos:</h1>
+          <p style="background: lightgray">[RecursosHumanos].[Departamentos]</p>
+
+          <h1>Esto sería la tabla en cuestión</h1>
+          <code>
+              SELECT [DepartmentoID]
+              ,[Nombre]
+              ,[NombreGrupo]
+              ,[FechaModificacion]
+          FROM [RecursosHumanos].[Departamentos
+        </code>
+            
+            <p>
+                Como pueden apreciar al momento de ver la estructura de la tabla puedes ver que pertenece a un Schema llamado [RecursosHumanos] que la tabla guarda Departamentos (esto por el nombre de la tabla).
+            </p>
+              <p>
+                  Los campos me indican claramente que son y el id de la tabla me dice que es el id del departamento.  De existir un id relacionado en dicha tabla deberá estar compuesto por el nombre de la tabla con la cual se relaciona y el sufijo ID. 
+              </p>
+                <h1>Ejemplo:</h1>
+           <div style="background: lightgray">
+              <p style="background: lightgray">
+                	CREATE TABLE [RecursosHumanos].[Empleados](</p>
+	                <p style="background: lightgray">[UnidadDeNegocioID] [int] NOT NULL,</p>
+	                <p style="background: lightgray">[NationalIDNumber] [nvarchar](15) NOT NULL,</p>
+	                <p style="background: lightgray">[LoginID] [nvarchar](256) NOT NULL,</p>
+	                <p style="background: lightgray">[OrganizationNode] [hierarchyid] NULL,</p>
+                    <p style="background: lightgray">	)</p>
+
+              </p>
+            </div>
+      </article>
+      </section>
+ 
+<section class="main-section" id="Procedimientos">
+        <header>Creación de Procedimientos</header>
+        <article>
+          La creación de los procedimientos almacenados en las bases de datos deberá cumplir con lo siguiente.
+        
+    
+          <p>Este comando crea un objeto dentro del gestor de base de datos. Puede ser una base de datos, tabla, índice, procedimiento almacenado o vista.
+
+              Ejemplo (crear una tabla):</p>
+    <code>
+        # CREATE TABLE Empleado
+        (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        Nombre VARCHAR(50),
+        Apellido VARCHAR(50),
+        Direccion VARCHAR(255),
+        Ciudad VARCHAR(60),
+        Telefono VARCHAR(15),
+        Peso VARCHAR (5),
+        Edad (2),
+        Actividad Específica (100),
+        idCargo INT
+        )
+      </code>
+  
+        <ul>
+          <li>Todos deben Iniciar con las letras SP_.</li>
+          <li>De ser procedimientos de Inserción, Eliminación, Búsqueda, modificación etc.  </li>
+          <li>Deberán especificarse en nombre del Procedimiento. Inmediatamente después del nombre de la tabla a la que afecta.</li>
+        </ul>
+      
+
+        </article>
+        </section>
+
+  <section class="main-section" id="Vistas">
+          <header>Vistas</header>
+          <article>
+              Las vistas deberán ser creadas con la palabra View de inicio en dicha vista.
+              Se ser una vista de una sola tabla deberán especificar el nombre de dicha tabla. En caso de contener más de una tabla ser lo más específico posible con relación a el uso de dicha vista en la creación de su nombre.
+           
+      
+      <code># CREATE VIEW id_vista [(columna,…)]AS especificación_consulta;</code>
+
+      Las vistas (“views”) en SQL son un mecanismo que permite generar un resultado a partir de una consulta (query) almacenado, y ejecutar nuevas consultas sobre este resultado como si fuera una tabla normal. Las vistas tienen la misma estructura que una tabla: filas y columnas. La única diferencia es que sólo se almacena de ellas la definición, no los datos.
+      
+      <p>Opcionalmente se puede asignar un nombre a cada columna de la vista. Si se especifica, la lista de nombres de las columnas debe de tener el mismo número de elementos que elnúmero de columnas producidas por la consulta. Si se omiten, cada columna de la vista1 adopta el nombre de la columna correspondiente en la consulta.</p>
+                </article>
+     </section>        
+
+
+ <section class="main-section" id="Pases_a_Producción">
+            <header>Pases a Producción:</header>
+            <article>
+                Al momento de Realizar un pase a producción deberán ser entregados en un documento conteniendo todos los objetos que se estarán creando a las bases de datos. Estos separados por tipos de Objetos.
+        
+        <!-- <code>while (condition)
+          statement</code> -->
+            <div>
+              <ul>
+                <li>•	Tablas</li>
+                <li>•	Vistas</li>
+                <li>•	Procedimientos</li>
+                <li>usuarios</li>
+                <li>•	Estos documentos deberán ser entregados con un plazo de por lo menos 3 días laborables.</li>
+                <li>•	De existir problemas tanto en la especificación de los objetos como en la creación de los mismos en el servidor, estos serán devueltos al departamento de desarrollo para ser corregidos.  (Al ser retornados el tiempo de verificación y ejecución del pase a Producción Reinicia nuevamente.)</li>
+              </ul>
+            </div>
+            <div>
+              <p>Los documentos de controles de cambios deberán ser aprobados y guardados de forma digital.</p>
+                 <p> Los Script de modificación deberán ser entregados con este documento.
+                  </p>
+            </div>
+
+        If the condition becomes false, statement within the loop stops executing and control passes to the statement following the loop.
+        
+        <p>The condition test occurs before statement in the loop is executed. If the condition returns true, statement is executed and the condition is tested again. If the condition returns false, execution stops and control is passed to the statement following while.</p>
+        
+              <p>To execute multiple statements, use a block statement ({ ... }) to group those statements.</p>
+        
+     
+            </article>
+     </section>
+
+
+     <section class="main-section" id="AuditoriaServidor">
+      <header>Auditoria del Servidor</header>
+      <article>
+          Para guardar las auditorias del servidor utilizamos las siguientes tablas
+  
+  <code>	CREATE TABLE [dbo].[MS_SQLerrorlog](
+      [LogDate] [datetime] NULL,
+      [ProcessInfo] [varchar](10) NULL,
+      [Text] [varchar](max) NULL
+    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+    
+    GO
+    </code>
+    La cual guarda el log de errores del servidor para poder detectar cualquier anomalía presentada por el mismo.
+  
+    <code>CREATE TABLE [dbo].[MS_SQLAgentlog](
+        [LogDate] [datetime] NULL,
+        [ProcessInfo] [varchar](10) NULL,
+        [Text] [varchar](max) NULL
+      ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+      
+      GO
+      
+      </code>
+
+  <p>La cual guarda la auditoria del agente, esto es información del proceso y la fecha y hora.</p>
+  
+    
+      </article>
+</section>     
+
+</main>
